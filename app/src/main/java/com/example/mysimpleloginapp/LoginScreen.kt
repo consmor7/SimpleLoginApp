@@ -11,8 +11,10 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun LoginScreen(
-    onLoginClick: (String, String) -> Unit
-) {
+    onLoginClick: (String, String) -> Unit,
+    onNavigateToRegister: () -> Unit
+)
+ {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -45,14 +47,11 @@ fun LoginScreen(
         ) {
             Text("Iniciar sesión")
         }
+        TextButton(onClick = { onNavigateToRegister() }) {
+            Text("¿No tienes cuenta? Regístrate")
+        }
+
     }
 }
-// Ejemplo de vista previa para el LoginScreen
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    MaterialTheme {
-        LoginScreen { _, _ -> }
-    }
-}
+
 
