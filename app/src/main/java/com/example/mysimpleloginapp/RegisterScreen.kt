@@ -9,8 +9,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun RegisterScreen(
-    onRegister: (String, String, String) -> Unit,
-    onNavigateToLogin: () -> Unit
+    onRegister: (String, String, String) -> Unit, // Función para registrar
+    onNavigateToLogin: () -> Unit // Función para navegar a la pantalla de inicio de sesión
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
